@@ -6,13 +6,13 @@ fun main() {
     println(part2(lines))
 }
 
-fun part1(lines: List<String>): Int = lines.sumOf { line ->
+private fun part1(lines: List<String>): Int = lines.sumOf { line ->
     val first = line.toCharArray().first { it.isDigit() }.digitToInt()
     val last = line.reversed().toCharArray().first { it.isDigit() }.digitToInt()
     first * 10 + last
 }
 
-fun part2(lines: List<String>): Int {
+private fun part2(lines: List<String>): Int {
     val map = mapOf(
         "one" to 1,
         "1" to 1,

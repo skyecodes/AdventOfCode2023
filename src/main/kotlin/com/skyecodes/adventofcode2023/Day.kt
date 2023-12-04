@@ -11,9 +11,9 @@ abstract class Day<R> {
 
     open fun test() {
         var exampleInput = Util.readExampleFileForDay(day)
-        assert(part1(exampleInput) == exampleResultPart1)
+        check(part1(exampleInput) == exampleResultPart1)
         if (hasExample2) exampleInput = Util.readExample2FileForDay(day)
-        assert(part2(exampleInput) == exampleResultPart2)
+        check(part2(exampleInput) == exampleResultPart2)
     }
 
     open fun run() {

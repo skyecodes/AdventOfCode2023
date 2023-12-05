@@ -5,7 +5,7 @@ fun main() {
     Day02.run()
 }
 
-object Day02 : Day<Int>() {
+object Day02 : SimpleDay() {
     override val exampleResultPart1 = 8
     override val exampleResultPart2 = 2286
 

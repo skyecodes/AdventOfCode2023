@@ -7,7 +7,7 @@ fun main() {
     Day05.run()
 }
 
-object Day05 : Day<Almanac1, Almanac2, Long, Long>() {
+object Day05 : Day<Almanac1, Long, Almanac2, Long>() {
     override val exampleResultPart1 = 35L
     override val exampleResultPart2 = 46L
 

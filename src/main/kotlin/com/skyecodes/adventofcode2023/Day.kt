@@ -1,7 +1,7 @@
 package com.skyecodes.adventofcode2023
 
-abstract class Day<I1, I2, R1, R2> {
-    private val day: String get() = this.javaClass.simpleName
+abstract class Day<I1, R1, I2, R2> {
+    protected val day: String get() = this.javaClass.simpleName
     abstract val exampleResultPart1: R1
     abstract val exampleResultPart2: R2
     open val hasExample2 = false

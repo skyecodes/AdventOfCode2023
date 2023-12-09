@@ -5,12 +5,19 @@ fun main() {
     Day08.run()
 }
 
-object Day08 : Day<Instructions, Int, Instructions, Long>() {
+object Day08 : NormalDay<Instructions, Int, Long>() {
     override val exampleResultPart1 = 6
     override val exampleResultPart2 = 6L
     override val hasExample2 = true
-
-    override fun parseInput1(input: List<String>): Instructions = parseInput(input)
+    override fun parseInput(input: List<String>): Instructions {
+        val directions = input[0]
+        val nodes = input.drop(2).associate {
+            val (node, leftright) = it.split(" = ")
+            val (left, right) = leftright.split(", ")
+            node to (left.drop(1) to right.dropLast(1))
+        }
+        return Instructions(directions, nodes)
+    }
 
     override fun part1(input: Instructions): Int {
         var count = 0
@@ -23,10 +30,6 @@ object Day08 : Day<Instructions, Int, Instructions, Long>() {
         }
         return count
     }
-
-    private fun Pair<String, String>.getNodeForDirection(direction: Char): String = if (direction == 'L') first else second
-
-    override fun parseInput2(input: List<String>): Instructions = parseInput(input)
 
     override fun part2(input: Instructions): Long {
         var count = 0
@@ -52,15 +55,7 @@ object Day08 : Day<Instructions, Int, Instructions, Long>() {
         return result
     }
 
-    private fun parseInput(input: List<String>): Instructions {
-        val directions = input[0]
-        val nodes = input.drop(2).associate {
-            val (node, leftright) = it.split(" = ")
-            val (left, right) = leftright.split(", ")
-            node to (left.drop(1) to right.dropLast(1))
-        }
-        return Instructions(directions, nodes)
-    }
+    private fun Pair<String, String>.getNodeForDirection(direction: Char): String = if (direction == 'L') first else second
 
     private fun findLCM(a: Long, b: Long): Long {
         val larger = if (a > b) a else b

@@ -76,7 +76,7 @@ typealias TileMap = List<List<Tile>>
 
 sealed interface Tile
 
-enum class Pipe(val directions: List<Direction>) : Tile {
+private enum class Pipe(val directions: List<Direction>) : Tile {
     VERTICAL(listOf(Direction.NORTH, Direction.SOUTH)),
     HORIZONTAL(listOf(Direction.WEST, Direction.EAST)),
     NE(listOf(Direction.NORTH, Direction.EAST)),
@@ -89,12 +89,12 @@ data object Ground : Tile
 
 data object Start : Tile
 
-data class Pos(val x: Int, val y: Int) {
+private data class Pos(val x: Int, val y: Int) {
     operator fun plus(pos: Pos): Pos = Pos(x + pos.x, y + pos.y)
     operator fun minus(pos: Pos): Pos = Pos(x - pos.x, y - pos.y)
 }
 
-enum class Direction(val delta: Pos, opposite: () -> Direction) {
+private enum class Direction(val delta: Pos, opposite: () -> Direction) {
     NORTH(Pos(0, -1), { SOUTH }),
     EAST(Pos(1, 0), { WEST }),
     SOUTH(Pos(0, 1), { NORTH }),

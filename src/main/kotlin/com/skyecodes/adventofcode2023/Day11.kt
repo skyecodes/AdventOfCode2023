@@ -25,5 +25,5 @@ object Day11 : NormalDay<List<String>, Long, Long>() {
         return pairs.sumOf { (a, b) -> abs(a.x - b.x) + abs(a.y - b.y) }
     }
 
-    private data class Pos(var x: Long, var y: Long)
+    private data class Pos(val x: Long, val y: Long)
 }

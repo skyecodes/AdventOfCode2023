@@ -5,7 +5,7 @@ fun main() {
     Day12.run()
 }
 
-object Day12 : Day<List<Record>, Long, List<Record>, Long>() {
+private object Day12 : Day<List<Record>, Long, List<Record>, Long>() {
     override val exampleResultPart1 = 21L
     override val exampleResultPart2 = 525152L
     private val cache = mutableMapOf<Pair<String, List<Int>>, Long>()
@@ -65,4 +65,4 @@ object Day12 : Day<List<Record>, Long, List<Record>, Long>() {
     }
 }
 
-data class Record(val pattern: String, val groups: List<Int>)
+private data class Record(val pattern: String, val groups: List<Int>)

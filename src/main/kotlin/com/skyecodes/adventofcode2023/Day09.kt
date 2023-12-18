@@ -5,7 +5,7 @@ fun main() {
     Day09.run()
 }
 
-object Day09 : NormalDay<List<List<Int>>, Int, Int>() {
+private object Day09 : NormalDay<List<List<Int>>, Int, Int>() {
     override val exampleResultPart1 = 114
     override val exampleResultPart2 = 5
     override val hasExample2 = true

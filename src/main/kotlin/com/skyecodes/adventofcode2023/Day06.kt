@@ -5,7 +5,7 @@ fun main() {
     Day06.run()
 }
 
-object Day06 : Day<List<Race1>, Int, Race2, Int>() {
+private object Day06 : Day<List<Race1>, Int, Race2, Int>() {
     override val exampleResultPart1 = 288
     override val exampleResultPart2 = 71503
 
@@ -23,5 +23,5 @@ object Day06 : Day<List<Race1>, Int, Race2, Int>() {
     private fun parseLine(line: String) = line.split(":")[1].split(" ").filter { it.isNotEmpty() }
 }
 
-data class Race1(val time: Int, val distance: Int)
-data class Race2(val time: Long, val distance: Long)
+private data class Race1(val time: Int, val distance: Int)
+private data class Race2(val time: Long, val distance: Long)

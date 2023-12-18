@@ -5,7 +5,7 @@ fun main() {
     Day16.run()
 }
 
-object Day16 : NormalDay<TileMap2, Int, Int>() {
+private object Day16 : NormalDay<TileMap2, Int, Int>() {
     override val exampleResultPart1 = 46
     override val exampleResultPart2 = 51
 
@@ -90,6 +90,6 @@ object Day16 : NormalDay<TileMap2, Int, Int>() {
     }
 }
 
-typealias TileMap2 = List<List<Tile2>>
+private typealias TileMap2 = List<List<Tile2>>
 
-sealed interface Tile2
+private sealed interface Tile2

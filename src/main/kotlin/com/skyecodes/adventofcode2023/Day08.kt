@@ -5,7 +5,7 @@ fun main() {
     Day08.run()
 }
 
-object Day08 : NormalDay<Instructions, Int, Long>() {
+private object Day08 : NormalDay<Instructions, Int, Long>() {
     override val exampleResultPart1 = 6
     override val exampleResultPart2 = 6L
     override val hasExample2 = true
@@ -71,4 +71,4 @@ object Day08 : NormalDay<Instructions, Int, Long>() {
     }
 }
 
-data class Instructions(val directions: String, val nodes: Map<String, Pair<String, String>>)
+private data class Instructions(val directions: String, val nodes: Map<String, Pair<String, String>>)

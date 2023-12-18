@@ -5,7 +5,7 @@ fun main() {
     Day10.run()
 }
 
-object Day10 : NormalDay<TileMap, Int, Int>() {
+private object Day10 : NormalDay<TileMap, Int, Int>() {
     override val exampleResultPart1 = 8
     override val exampleResultPart2 = 4
     override val hasExample2 = true
@@ -72,9 +72,9 @@ object Day10 : NormalDay<TileMap, Int, Int>() {
     private fun TileMap.getTile(pos: Pos) = getOrNull(pos.y)?.getOrNull(pos.x)
 }
 
-typealias TileMap = List<List<Tile>>
+private typealias TileMap = List<List<Tile>>
 
-sealed interface Tile
+private sealed interface Tile
 
 private enum class Pipe(val directions: List<Direction>) : Tile {
     VERTICAL(listOf(Direction.NORTH, Direction.SOUTH)),
@@ -85,9 +85,9 @@ private enum class Pipe(val directions: List<Direction>) : Tile {
     SE(listOf(Direction.SOUTH, Direction.EAST)),
 }
 
-data object Ground : Tile
+private data object Ground : Tile
 
-data object Start : Tile
+private data object Start : Tile
 
 private data class Pos(val x: Int, val y: Int) {
     operator fun plus(pos: Pos): Pos = Pos(x + pos.x, y + pos.y)

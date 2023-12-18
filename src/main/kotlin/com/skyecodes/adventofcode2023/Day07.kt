@@ -11,7 +11,7 @@ private val cards2 = arrayOf('J', '2', '3', '4', '5', '6', '7', '8', '9', 'T', '
 
 private val cardReplacements = cards2.drop(1)
 
-object Day07 : Day<List<Hand>, Int, List<Hand2>, Int>() {
+private object Day07 : Day<List<Hand>, Int, List<Hand2>, Int>() {
     override val exampleResultPart1 = 6440
     override val exampleResultPart2 = 5905
 
@@ -32,7 +32,7 @@ object Day07 : Day<List<Hand>, Int, List<Hand2>, Int>() {
     private fun calculate(input: List<Hand>): Int = input.sorted().mapIndexed { i, hand -> (i + 1) * hand.bid }.sum()
 }
 
-open class Hand(val cards: List<Int>, val bid: Int) : Comparable<Hand> {
+private open class Hand(val cards: List<Int>, val bid: Int) : Comparable<Hand> {
     open val type: Int by lazy { calculateType(cards) }
 
     override fun compareTo(other: Hand): Int {
@@ -45,7 +45,7 @@ open class Hand(val cards: List<Int>, val bid: Int) : Comparable<Hand> {
     }
 }
 
-class Hand2(val cardString: String, cards: List<Int>, bid: Int) : Hand(cards, bid) {
+private class Hand2(val cardString: String, cards: List<Int>, bid: Int) : Hand(cards, bid) {
     override val type: Int by lazy { calculateTypeWithJokers(cardString, cards) }
 }
 

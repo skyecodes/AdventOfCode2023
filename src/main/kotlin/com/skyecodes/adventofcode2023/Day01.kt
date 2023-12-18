@@ -5,7 +5,7 @@ fun main() {
     Day01.run()
 }
 
-object Day01 : SimpleDay() {
+private object Day01 : SimpleDay() {
     override val exampleResultPart1 = 142
     override val exampleResultPart2 = 281
     override val hasExample2 = true

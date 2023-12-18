@@ -7,7 +7,7 @@ fun main() {
     Day11.run()
 }
 
-object Day11 : NormalDay<List<String>, Long, Long>() {
+private object Day11 : NormalDay<List<String>, Long, Long>() {
     override val exampleResultPart1 = 374L
     override val exampleResultPart2 = 82000210L
 

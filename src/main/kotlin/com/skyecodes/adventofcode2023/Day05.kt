@@ -7,7 +7,7 @@ fun main() {
     Day05.run()
 }
 
-object Day05 : Day<Almanac1, Long, Almanac2, Long>() {
+private object Day05 : Day<Almanac1, Long, Almanac2, Long>() {
     override val exampleResultPart1 = 35L
     override val exampleResultPart2 = 46L
 
@@ -47,17 +47,17 @@ object Day05 : Day<Almanac1, Long, Almanac2, Long>() {
 
 private typealias AlmanacMap = List<AlmanacCategory>
 
-data class AlmanacCategory(val destinationStart: Long, val sourceStart: Long, val length: Long) {
+private data class AlmanacCategory(val destinationStart: Long, val sourceStart: Long, val length: Long) {
     val sourceEnd = sourceStart + length
 }
 
-data class CategoryRange(val start: Long, val length: Long) {
+private data class CategoryRange(val start: Long, val length: Long) {
     val end = start + length
 }
 
-data class Almanac1(val seeds: List<Long>, val maps: List<AlmanacMap>)
+private data class Almanac1(val seeds: List<Long>, val maps: List<AlmanacMap>)
 
-data class Almanac2(val seeds: List<CategoryRange>, val maps: List<AlmanacMap>) {
+private data class Almanac2(val seeds: List<CategoryRange>, val maps: List<AlmanacMap>) {
     fun convertRecursive(seeds: List<CategoryRange>, mapIndex: Int): List<CategoryRange> = if (mapIndex < maps.size) convertRecursive(seeds.flatMap { maps[mapIndex].convert2(it) }, mapIndex + 1) else seeds
 }
 
